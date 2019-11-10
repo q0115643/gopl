@@ -22,9 +22,30 @@ func PopCount(x uint64) int {
 
 // PopCount2 returns the population count of x with loop
 func PopCount2(x uint64) int {
-	var sum byte
-	for i := uint(0); i < 8; i++ {
-		sum += pc[byte(x>>(i*8))]
+	var cnt byte
+	for i := 0; i < 8; i++ {
+		cnt += pc[byte(x>>(i*8))]
 	}
-	return int(sum)
+	return int(cnt)
+}
+
+// PopCount3 2-4
+func PopCount3(x uint64) int {
+	cnt := 0
+	for i := uint(0); i < 64; i++ {
+		if (x>>i)&1 != 0 {
+			cnt++
+		}
+	}
+	return cnt
+}
+
+// PopCount4 2-5
+func PopCount4(x uint64) int {
+	n := 0
+	for x != 0 {
+		x &= x - 1
+		n++
+	}
+	return n
 }
