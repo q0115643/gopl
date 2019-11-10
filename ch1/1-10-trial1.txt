@@ -1,0 +1,2 @@
+0.22s   219898  https://daum.net
+0.22s elapsed
