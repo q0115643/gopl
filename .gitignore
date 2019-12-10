@@ -3,4 +3,6 @@ main.exe
 test.go
 pkg
 bin
+*.swp
+*.swo
 
